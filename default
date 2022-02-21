@@ -1,0 +1,91 @@
+server
+    address 127.0.0.1;
+    port 8000;
+    server_name localhost;
+    autoindex on;
+    index index.html;
+    root /Users/macbook/webserv/www/root/localhost;
+location
+    path /uploads;
+    autoindex on;
+    method GET POST PUT DELETE;
+    upload /Users/macbook/webserv/www/root/localhost/uploads;
+    root /Users/macbook/webserv/www/root/localhost/uploads;
+location
+    path /put_test;
+    method GET POST PUT DELETE;
+    upload /Users/macbook/webserv/www/root/localhost/uploads;
+    root /Users/macbook/webserv/www/root/localhost/uploads;
+location
+    path /cgi-bin;
+    autoindex on;
+    method GET POST PUT DELETE;
+    cgi .py GET POST /usr/bin/python3;
+    cgi .cgi GET POST /Users/macbook/webserv/www/root/localhost/cgi-bin/users.cgi;
+    cgi_root /Users/macbook/webserv/www/root/localhost/cgi-bin;
+    upload /Users/macbook/webserv/www/root/localhost/uploads;
+    root /Users/macbook/webserv/www/root/localhost/cgi-bin;
+location
+    path /;
+    autoindex on;
+    cgi .bla POST /Users/macbook/webserv/www/root/localhost/cgi-bin/cgi_tester;
+    cgi_root /Users/macbook/webserv/www/root/localhost/cgi-bin;
+    upload /Users/macbook/webserv/www/root/localhost/uploads;
+location
+    path /YoupBanane;
+    cgi .bla POST /Users/macbook/webserv/www/root/localhost/cgi-bin/cgi_tester;
+    cgi_root /Users/macbook/webserv/www/root/localhost/cgi-bin;
+    method GET POST;
+    root /Users/macbook/webserv/www/root/localhost/YoupiBanane;
+location
+    path /post_body;
+    method GET POST;
+    client_max_body_size 100;
+location
+    path /directory;
+    method GET POST;
+    index youpi.bad_extension;
+    root /Users/macbook/webserv/www/root/localhost/YoupiBanane;
+    cgi .bla POST /Users/macbook/webserv/www/root/localhost/cgi-bin/cgi_tester;
+    cgi_root /Users/macbook/webserv/www/root/localhost/YoupiBanane;
+    upload /Users/macbook/webserv/www/root/localhost/uploads;
+
+server
+    address 192.168.0.213;
+    port 8000;
+    server_name website1 www.website1;
+    autoindex off;
+    index index.html;
+    root /Users/macbook/webserv/www/root/website1;
+    error_page 404 /Users/macbook/webserv/www/root/website1/errors/error404.html;
+location
+    path /;
+    method GET POST;
+    root /Users/macbook/webserv/www/root/website1;
+location
+    path /cgi-bin;
+    cgi .py GET POST /usr/bin/python3;
+    cgi_root /Users/macbook/webserv/www/root/localhost/cgi-bin;
+    upload /Users/macbook/webserv/www/root/localhost/uploads;
+    root /Users/macbook/webserv/www/root/localhost/cgi-bin;
+
+server
+    address 127.0.0.1;
+    port 9090;
+    server_name website2;
+    autoindex on;
+    index index.html;
+    root /Users/macbook/webserv/www/root/website2;
+
+server
+    address 127.0.0.1;
+    port 8000;
+    server_name website3;
+    autoindex off;
+    index index.html;
+    root /Users/macbook/webserv/www/root/website3;
+
+server
+    port 8000;
+    server_name website4;
+    redirect 301 https://google.com;

@@ -1,0 +1,20 @@
+------WebKitFormBoundaryu9OzNZhDfFDUG9Xt
+Content-Disposition: form-data; name="file"; filename="План.txt"
+Content-Type: text/plain
+
+0. Разобраться со всеми параметрами настройки flax-blockchain https://github.com/Flax-Network/flax-blockchain/blob/main/flax/util/json_util.py
+1. Создать форк проекта chia на gitlab
+2. Изменяем порты
+3. Запустить и сконфигурировать один timelord
+4. Запустить и сконфигурировать 3 node, дожидаемся синхронизации
+5. Сделать 100 плота по k=32 либо с k меньшим, изменив NUMBER_ZERO_BITS_PLOT_FILTER  (для отладки сети)
+6. Настраиваем фермера
+7. Запускаем сеть через Kuber, проверяем генерацию genesis block
+8. Проверяем начала ли рости высота. 
+
+*Одной из фишек форка может быть - возможность разделение плота на части.
+
+Запуск 1 версии - 2-3 месяца, в связи со сложностью отладки.
+
+
+------WebKitFormBoundaryu9OzNZhDfFDUG9Xt--

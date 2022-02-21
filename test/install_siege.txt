@@ -1,0 +1,8 @@
+$ ./configure
+$ make
+$ make install
+$ /usr/local/bin/siege -c 100 -t 1M http://127.0.0.1:8000
+
+если есть потери запросов - изменить конфиг
+vim ~/.siege/siege.conf
+connection = keep-alive

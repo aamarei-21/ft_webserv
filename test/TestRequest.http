@@ -1,0 +1,12 @@
+GET /favicon.ico HTTP/1.1
+Host: 127.0.0.1:8080
+Accept: */*
+Connection: keep-alive
+Cookie: csrftoken=1ee5mEoaHBnuz1675sgCQM6RC2UI5c1YJhr0nMjmnA2yJuuG87gqLt1MbJUgdsKF
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1.2 Safari/605.1.15
+Accept-Language: ru
+Referer: http://127.0.0.1:8080/
+Accept-Language: ru, en
+Accept-Encoding: gzip, deflate
+
+
